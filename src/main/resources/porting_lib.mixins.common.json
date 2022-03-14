@@ -52,7 +52,6 @@
     "ServerLevelMixin",
     "ServerPlayerGameModeMixin",
     "ServerPlayerMixin",
-    "ServerResourcesMixin",
     "ShapedRecipeMixin",
     "ShapelessRecipe$SerializerMixin",
     "SheepMixin",
@@ -100,7 +99,6 @@
     "accessor.SlotAccessor",
     "accessor.StairBlockAccessor",
     "accessor.StructureTemplateAccessor",
-    "accessor.TagContainerAccessor",
     "accessor.TagValueAccessor"
   ],
   "injectors": {

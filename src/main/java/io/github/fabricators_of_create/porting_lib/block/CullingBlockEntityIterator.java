@@ -6,14 +6,14 @@ import java.util.NoSuchElementException;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
-public class CullingBlockEntityIterator implements Iterator<BlockEntity> {
-	private final Iterator<? extends BlockEntity> wrapped;
+public class CullingBlockEntityIterator implements Iterator<Object> {
+	private final Iterator<? extends Object> wrapped;
 	private final Frustum frustum;
 
-	private BlockEntity next;
+	private Object next;
 	private boolean nextChecked;
 
-	public CullingBlockEntityIterator(Iterator<? extends BlockEntity> iterator, Frustum frustum) {
+	public CullingBlockEntityIterator(Iterator<? extends Object> iterator, Frustum frustum) {
 		wrapped = iterator;
 		this.frustum = frustum;
 	}
@@ -25,7 +25,7 @@ public class CullingBlockEntityIterator implements Iterator<BlockEntity> {
 	}
 
 	@Override
-	public BlockEntity next() {
+	public Object next() {
 		ensureNextChecked();
 		if (next == null) {
 			throw new NoSuchElementException();
@@ -46,10 +46,10 @@ public class CullingBlockEntityIterator implements Iterator<BlockEntity> {
 		}
 	}
 
-	private BlockEntity nextCulled() {
+	private Object nextCulled() {
 		while (true) {
 			if (wrapped.hasNext()) {
-				BlockEntity next = wrapped.next();
+				Object next = wrapped.next();
 				if (next instanceof CustomRenderBoundingBoxBlockEntity cullable) {
 					if (frustum.isVisible(cullable.getRenderBoundingBox())) {
 						return next;

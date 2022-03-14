@@ -60,7 +60,7 @@ public abstract class LevelRendererMixin {
 		),
 		at = @At("STORE")
 	)
-	private Iterator<BlockEntity> wrapBlockEntityIterator(Iterator<BlockEntity> iterator) {
+	private Iterator<?> wrapBlockEntityIterator(Iterator<?> iterator) {
 		return new CullingBlockEntityIterator(iterator, capturedFrustum != null ? capturedFrustum : cullingFrustum);
 	}
 

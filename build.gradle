@@ -57,9 +57,8 @@ dependencies {
 			setNameSyntheticMembers(false)
 		}
 	}
-	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
-	modImplementation "org.quiltmc.qsl:qsl:${qsl_version}+${project.minecraft_version}-SNAPSHOT"
-	modImplementation("org.quiltmc.fabric_api_qsl:fabric-api:${project.fabric_version}")
+	modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
+	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 //	modLocalRuntime("maven.modrinth:lazydfu:0.1.2")
 //	modLocalRuntime("maven.modrinth:suggestionproviderfabric:1.0.1")
 //	modLocalRuntime("mcjty.theoneprobe:theoneprobe-fabric:${top_version}")
