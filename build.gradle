@@ -57,7 +57,7 @@ dependencies {
 			setNameSyntheticMembers(false)
 		}
 	}
-	modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
+	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 //	modLocalRuntime("maven.modrinth:lazydfu:0.1.2")
 //	modLocalRuntime("maven.modrinth:suggestionproviderfabric:1.0.1")
